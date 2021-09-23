@@ -76,6 +76,6 @@ private:
 void CreateFds(v8::Local<v8::Value> streams, v8::Local<v8::Value> term,
         std::vector<int>& childFds, std::vector<int>& parentFds);
 
-void AttachInit(v8::Handle<v8::Object> exports);
+void AttachInit(v8::JobHandle<v8::Object> exports);
 
 #endif
