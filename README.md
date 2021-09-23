@@ -1,46 +1,20 @@
-sourcebox/lxc
-=============
-
-LXC bindings for Node.js.
-
-For now, this module does not implement the full API exposed by LXC, but only
-the subset that is required to provide a sandboxed environment.
-
-## Requirements
-
-### LXC
-
-A recent version of `lxc` is required. Depending on your distro, installing
-`lxc-dev` might also be required.
-
-Note that Debian currently does not provide a `lxc-dev` package, so you probably
-want to compile LXC from source:
-
+Steps so far
+==================
+Testing with Ubuntu 20 LTS and Testing with Debian 11 right now...
+1. Add `cgroup_enable=memory swapaccount=1` to `GRUB_CMDLINE_LINUX_DEFAULT` in `/etc/default/grub`
+2. Run `update-grub`
+3. Reboot the VM (`sudo reboot`)
+### 2. Dependencies
+Install the required dependencies:
+```bash
+su
+apt-get install curl
+curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+apt-get install -y nodejs
+sudo apt-get update
+sudo apt-get install make gcc nodejs git btrfs-progs libcap-dev build-essential lxc lxc-dev
 ```
-git clone git@github.com:lxc/lxc.git
-cd lxc
-./autogen.sh
-./configure
-make
-sudo make install
-```
+* Try to install using npm with `npm install https://github.com/ebertmi/sourcebox-sandbox -g` -> doesn't work well with the vanilla install of node
+* installation of node via nvm `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash`
 
-### Node.js
-
-A recent version (preferably 0.12.0+) of Node.js is recommended.
-
-The bindings might work with older versions (0.10.xx), but a bug in libuv
-prevents the correct reaping of child processes, especially when used in
-conjunction with the `child_process` module. This bug was fixed in Node.js
-0.11.13.
-
-The old libuv version will reap all child processes, regardless of if they were
-spawned by libuv itself or another native module. That means there is a good
-chance that you will not receive any `exit` or `close` events for attached
-processes.
-
-You have been warned.
-
-### libcap-dev
-
-Library for setting POSIX capabilities.
+Error when building. The sourcebox-lxc library doesnt seem to work properly.
