@@ -21,7 +21,6 @@ curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
 apt-get install -y nodejs
 sudo apt-get update
 sudo apt-get install make gcc nodejs git btrfs-progs libcap-dev build-essential lxc lxc-dev
-sudo -E npm install -g git+ssh://git@github.io:waywaaard/sourcebox-sandbox
 ```
 
 **Hint:** Also try to update `npm` itself with `sudo npm install npm --upgrade -g` and maybe you need to link the node binary `sudo ln -s /usr/bin/nodejs /usr/bin/node`.
