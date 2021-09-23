@@ -1,8 +1,7 @@
 Steps so far
 ==================
 
-Testing with Ubuntu 20 LTS
-Testing with Debian 11
+Testing with Ubuntu 20 LTS and Testing with Debian 11 right now...
 
 1. Add `cgroup_enable=memory swapaccount=1` to `GRUB_CMDLINE_LINUX_DEFAULT` in `/etc/default/grub`
 2. Run `update-grub`
