@@ -22,9 +22,8 @@ sudo apt-get install make gcc nodejs git btrfs-progs libcap-dev build-essential 
 ```
 
 * Try to install using npm with `npm install https://github.com/ebertmi/sourcebox-sandbox -g` -> doesn't work well with the vanilla install of node
-* 
-* Download the `https://github.com/ebertmi/sourcebox-sandbox` as a zip and unzip.
-* Use `git clone ...` by using either SSH (requires your key) or HTTPS
+* installation of node via nvm `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash`
+
 
 ### 4. Create a sourcebox sandbox template container
 
