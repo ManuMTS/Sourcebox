@@ -6,9 +6,7 @@ Testing with Ubuntu 20 LTS and Testing with Debian 11 right now...
 1. Add `cgroup_enable=memory swapaccount=1` to `GRUB_CMDLINE_LINUX_DEFAULT` in `/etc/default/grub`
 2. Run `update-grub`
 3. Reboot the VM (`sudo reboot`)
-4. The `memory cgroup` should be now enabled
 
-See http://serverfault.com/a/762815 for more information about GRUB...
 
 ### 2. Dependencies
 
@@ -23,13 +21,8 @@ sudo apt-get update
 sudo apt-get install make gcc nodejs git btrfs-progs libcap-dev build-essential lxc lxc-dev
 ```
 
-**Hint:** Also try to update `npm` itself with `sudo npm install npm --upgrade -g` and maybe you need to link the node binary `sudo ln -s /usr/bin/nodejs /usr/bin/node`.
-
-### 3. Install sourcebox-sandbox
-
-There are multiple ways of install the sourcebox-sandbox. The easiest is using npm and installing it using the `-g` flag:
-
-* Try to install using npm with `npm install https://github.com/ebertmi/sourcebox-sandbox -g`
+* Try to install using npm with `npm install https://github.com/ebertmi/sourcebox-sandbox -g` -> doesn't work well with the vanilla install of node
+* 
 * Download the `https://github.com/ebertmi/sourcebox-sandbox` as a zip and unzip.
 * Use `git clone ...` by using either SSH (requires your key) or HTTPS
 
