@@ -1,5 +1,4 @@
-Installation of sourcebox on Ubuntu Focal
-==================
+# Installation of sourcebox on Ubuntu Focal
 ### 1. Ubuntu Version
 Install a VM with Ubuntu 20.04.3 LTS (Focal Fossa). The Desktop and Server Version are available at https://releases.ubuntu.com/20.04/. I used the Desktop Version to have a GUI.
 HyperV and VMware were both tested and work for this purpose. Choose Hardware according to your needs. 4 vCPU-cores and 4GB RAM should be the minimum of the VM.
@@ -26,3 +25,11 @@ Clone the git repository in a folder of your choice for example in the home fold
 1. Go in the cloned github directory `cd home/<username>/sourcebox-sandbox`
 2. Compile the sourcebox with the command `npm install -g`
 3. After Compilation link the sourcebox aswell `sudo ln -s /home/<username>/.nvm/versions/node/v7.10.1/bin/sourcebox /usr/local/bin/sourcebox`
+# Installation of the Sourcebox-LTI_Bridge (WIP)
+### 1. Dependencies
+MongoDB: 
+1. Import MongoDB Public GPG Key `wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -`
+2. Create List File __NOT AS SUDO__ `/etc/apt/sources.list.d/mongodb-org-5.0.list`
+3. `sudo apt update`
+4. `sudo apt install -y mongodb-org`
+5. Start the process `sudo systemctl start mongod`
