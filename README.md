@@ -27,9 +27,11 @@ Clone the git repository in a folder of your choice for example in the home fold
 3. After Compilation link the sourcebox aswell `sudo ln -s /home/<username>/.nvm/versions/node/v7.10.1/bin/sourcebox /usr/local/bin/sourcebox`
 # Installation of the Sourcebox-LTI_Bridge (WIP)
 ### 1. Dependencies
-MongoDB: 
-1. Import MongoDB Public GPG Key `wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -`
-2. Create List File __NOT AS SUDO__ `/etc/apt/sources.list.d/mongodb-org-5.0.list`
-3. `sudo apt update`
-4. `sudo apt install -y mongodb-org`
-5. Start the process `sudo systemctl start mongod`
+#### MongoDB: 
+1. Install MongoDB Dependencies: `sudo apt-get install libcurl4 openssl liblzma5`
+2. Download MongoDB v3.4.6 Archive: `wget -c https://fastdl.mongodb.org/linux/mongodb- linux-x86_64-3.4.6.tgz`
+3. Unpack the archive `tar -zxvf mongodb-linux-*-3.4.6.tgz` and then place it in a folder of your preference.
+4. Link the mongoDB binaries to the PATH `sudo ln -s  </path/to/the/mongodb-directory>/bin/* /usr/local/bin/`
+5. Create Folders for MongoDB and own them: Data: `sudo mkdir -p /var/lib/mongo` Logs: `sudo mkdir -p /var/log/mongodb` `sudo chown <username> /var/lib/mongo` `sudo chown <user> /var/log/mongodb`
+6. Run MongoDB: `mongod --dbpath /var/lib/mongo --logpath /var/log/mongodb/mongod.log --fork`
+7. Check that MongoDB started successfully: `cat /var/log/mongodb/mongod.log` it should output **[initandlisten] waiting for connections on port 27017** at the end.
