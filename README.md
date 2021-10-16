@@ -26,12 +26,18 @@ Clone the git repository in a folder of your choice for example in the home fold
 2. Compile the sourcebox with the command `npm install -g`
 3. After Compilation link the sourcebox aswell `sudo ln -s /home/<username>/.nvm/versions/node/v7.10.1/bin/sourcebox /usr/local/bin/sourcebox`
 # Installation of the Sourcebox-LTI_Bridge (WIP)
-### 1. Dependencies
+### Dependencies
 #### MongoDB: 
 1. Install MongoDB Dependencies: `sudo apt-get install libcurl4 openssl liblzma5`
-2. Download MongoDB v3.4.6 Archive: `wget -c https://fastdl.mongodb.org/linux/mongodb- linux-x86_64-3.4.6.tgz`
+2. Download MongoDB v3.4.6 Archive from the mongoDB Website `https://www.mongodb.com/download-center/community/releases/archive`
 3. Unpack the archive `tar -zxvf mongodb-linux-*-3.4.6.tgz` and then place it in a folder of your preference.
 4. Link the mongoDB binaries to the PATH `sudo ln -s  </path/to/the/mongodb-directory>/bin/* /usr/local/bin/`
 5. Create Folders for MongoDB and own them: Data: `sudo mkdir -p /var/lib/mongo` Logs: `sudo mkdir -p /var/log/mongodb` `sudo chown <username> /var/lib/mongo` `sudo chown <user> /var/log/mongodb`
 6. Run MongoDB: `mongod --dbpath /var/lib/mongo --logpath /var/log/mongodb/mongod.log --fork`
-7. Check that MongoDB started successfully: `cat /var/log/mongodb/mongod.log` it should output **[initandlisten] waiting for connections on port 27017** at the end.
+7. Check that MongoDB started successfully: `cat /var/log/mongodb/mongod.log` it should output __[initandlisten] waiting for connections on port 27017__ at the end.
+#### Node:
+The Node Version 7.* used for compilation of the sourcebox can't be used for the soucebox_lti-bridge.
+1. Install the latest 8.* Node version via nvm `nvm install 8.17.0` and activate it `nvm use 8.17.0`.
+2. Remove the links for Node 7.* in the /usr/local/bin folder `sudo rm /usr/local/bin/node` `sudo rm /usr/local/bin/npm`.
+3. Create links for the 8.* Node version `sudo ln -s /home/<username>/.nvm/versions/node/8.17.0/bin/node /usr/local/bin/` `/home/<username>/.nvm/versions/node/8.17.0/bin/npm /usr/local/bin/`
+4. Check your Node version with the command `node --version` and `sudo node --version` you should get __8.17.0__ in both cases.
