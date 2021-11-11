@@ -75,4 +75,16 @@ You will need a Moodle instance to test the sourcebox_lti-bridge (*Well if you w
     "debug": false
 }`
 4. create the folder sourceboxContent in your home folder `mkdir ~/sourceboxContent`
-5. 
+Now that the sourcebox_lti-bridge is compiled and configured it can be run. First cd in the folder of the sourcebox_lti-bridge `cd ~/sourcebox_lti-bridge` the run the sourcebox_lti-bridge with this command: `sudo DEBUG=sourcebox:* node src/server/server.js`. The tool won't output any feedback in the terminal. The only feedback you get is the blinking cursor. Now try to connect to the tool via moodle. When you got it all right the console should give you an output as soon as you connect to the tool in moodle. Occasionally the terminal window will output some error messages looking like this `at handleAuth (/home/mueller/sourcebox_lti-bridge/src/server/server.js:129:13)
+    at tryCatcher (/home/mueller/sourcebox_lti-bridge/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/mueller/sourcebox_lti-bridge/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/home/mueller/sourcebox_lti-bridge/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/home/mueller/sourcebox_lti-bridge/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/home/mueller/sourcebox_lti-bridge/node_modules/bluebird/js/release/promise.js:693:18)
+    at Async._drainQueue (/home/mueller/sourcebox_lti-bridge/node_modules/bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/home/mueller/sourcebox_lti-bridge/node_modules/bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues (/home/mueller/sourcebox_lti-bridge/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:810:20)
+    at tryOnImmediate (timers.js:768:5)
+    at processImmediate [as _immediateCallback] (timers.js:745:5) +15ms
+`. The original server from the creator of the sourcebox_lti-bridge did that as well so you will have to bear with it for now.
