@@ -20,7 +20,7 @@ Python also needs a link.
 ### 5. Clone Git Repository
 Clone the git repository in a folder of your choice for example in the home folder.
 1. `cd ~`
-2. `git clone https://github.com/ebertmi/sourcebox-sandbox.git`
+2. `git clone https://github.com/manumts/sourcebox-sandbox.git`
 ### 6. Compile the sourcebox
 1. Go in the cloned github directory `cd ~/sourcebox-sandbox`
 2. Compile the sourcebox with the command `npm install -g`
@@ -45,9 +45,10 @@ The Node Version 7.* used for compilation of the sourcebox can't be used for the
 #### Moodle:
 You will need a Moodle instance to test the sourcebox_lti-bridge (*Well if you wouldn't have one you wouldn't be doing all of this anyways...*) In the Moodle you will have to configure the tool as a lti plugin. There are some good tutorials online on doing that i recommend these two from the official Moodle documentation: [https://docs.moodle.org/311/de/Als_LTI-Tool_bereitstellen] [https://docs.moodle.org/311/de/Externes_Tool_konfigurieren]. *If the link might be dead in the future just google for a tutorial.* If you got a Moodle Instance ready and running you can configure the LTI-Plugin just like in the guide and put in a key and password of your liking.
 ### Compiling the sourcebox_lti-bridge
-1. Cd in the sourcebox_lti-bridge directory `cd ~/sourcebox_lti-bridge`
-2. Compile the sourcebox_lti-bridge `npm install -g` This will take some time.
-3. Alter the config file of the sourcebox_lti-bridge `nano ~/sourcebox_lti-bridge/config/default.json` and put the following content in there: 
+1. Clone the sourcebox_lti-bridge files from github: `git clone https://github.com/manumts/sourcebox_lti-bridge.git`
+2. Cd in the sourcebox_lti-bridge directory `cd ~/sourcebox_lti-bridge`
+3. Compile the sourcebox_lti-bridge `npm install -g` This will take some time.
+4. Alter the config file of the sourcebox_lti-bridge `nano ~/sourcebox_lti-bridge/config/default.json` and put the following content in there: 
    `{
     "serverUrl": "url / ip of your machine",
     "sourcebox": {
